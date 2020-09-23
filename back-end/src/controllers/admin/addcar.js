@@ -3,7 +3,6 @@ const Newcar = require("../../models/car");
 const slugify = require("slugify");
 
 exports.AddCar = (req, res) => {
-  res.status(200).json({ file: req.files, body: req.body });
 
   let carImg = "";
   let specdtl = "";
@@ -28,21 +27,26 @@ exports.AddCar = (req, res) => {
   });
 
 
-console.log(new_car)
-
-
-
-  new_car.save((error, data) => {
-
-    if (error) {
-      return res.json({
-        message: "samething may be wrong",
-        error: error,
-      });
-    }
-
-     return res.json({ message: "New Car Added", data });
-     
-  })
+ new_car.save((error,data)=>{
+   if(data){
+    res.status(200).json({data:data})
+  }else{
+    res.status(400).json({error:error})
+  }
+ })
 
 };
+
+
+
+// get car data
+// -----------------------
+
+exports.GetCar = (req, res) => {
+  Newcar.find({}, (err,data)=>{
+    if(data) 
+    res.status(200).json({data:data})
+  })
+};
+
+

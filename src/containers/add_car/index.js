@@ -33,7 +33,11 @@ loginSubmit=(e)=>{
           <Row style={{ marginTop: "50px" }}>
             <Col md={{ span: 12, offset: 5 }}>
 
-              <Form name="dynamic_form_nest_item" onSubmit={(e) => {alert()}} >
+
+
+
+
+              {/* <Form name="dynamic_form_nest_item" onSubmit={(e) => {alert()}} >
 
 
                 <Form.Item label="Car Name">
@@ -54,21 +58,21 @@ loginSubmit=(e)=>{
                     
                   />
                 </Form.Item>
+ */}
 
 
 
-
-                <Form.Item label="spec__ file">
+                {/* <Form.Item label="spec__ file">
                   <Input
                     type="file"
                     onChange = {e=>{this.setState({car_img:e.target.files})}}
                     style={{ marginBottom: "20px", width: "95%" }}
                     
                   />
-                </Form.Item>
+                </Form.Item> */}
 
 
-                <Form.List name="users">
+                {/* <Form.List name="users">
                   {(fields, { add, remove }) => {
                     return (
                       <div>
@@ -130,13 +134,13 @@ loginSubmit=(e)=>{
                       </div>
                     );
                   }}
-                </Form.List>
+                </Form.List> */}
 
-                <Form.Item>
+                {/* <Form.Item>
                   <Input type="submit" value="submit"    style={{ marginBottom: "20px", width: "95%" }}/>
                   
                 </Form.Item>
-              </Form>
+              </Form> */}
             </Col>
           </Row>
         </Container>

@@ -17,6 +17,8 @@ exports.signup = (req, res) => {
     const _user = new User({firstname,lastname,email,password,username: firstname+"_"+Math.random().toString(),role:"admin" } );
     console.log(req.body)
     
+
+    
     _user.save((error, data) => {
       if (error) {
         return res.json({
@@ -25,12 +27,16 @@ exports.signup = (req, res) => {
         });
       }
 
+
       if (res) {
         return res.status(201).json({
           user :data,
           message: " admin updated successfully",
         });
       }
+
+
+
     });
   });
 };

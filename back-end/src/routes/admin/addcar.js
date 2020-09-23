@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {AddCar} = require('../../controllers/admin/addcar')
+const {AddCar, GetCar} = require('../../controllers/admin/addcar')
 
 const multer = require('multer')
 const path = require('path')
@@ -29,5 +29,9 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 
-router.post('/product/create', upload.any() , AddCar)
+router.post('/admin/create', upload.any() , AddCar)
+
+router.post('/getcar', GetCar)
+
+
 module.exports = router;

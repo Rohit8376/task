@@ -19,7 +19,6 @@ app.use('/api', adminRoutes)
 app.use('/api', addcar)
 
 
-
 // get file api 
 app.get('/getfile/:filename', (req,res)=>{
     var workbook = XLSX.readFile('./carImage/'+req.params.filename);
@@ -27,9 +26,6 @@ app.get('/getfile/:filename', (req,res)=>{
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
     res.send(xlData)
 })
-
-
-
 
 
 app.listen(2000, ()=>{
